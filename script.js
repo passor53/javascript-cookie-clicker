@@ -11,13 +11,16 @@ let time_bonus =30;
 let val_bonus = 1;
 let id;
 let Element;
+let bloc_bonus = 0;
 
   // Fonction bonus + retrait du coup de 5000
 function Bonus() {
-  if (score > bonus){
-    score = score - 5000;
-    updateDOM('affichage', score);
-  val_bonus = 2;
+  
+    if (score > bonus && bloc_bonus==0){
+      score = score - 5000;
+      bloc_bonus = 1;
+      updateDOM('affichage', score);
+      val_bonus = 2;
       verif_bonus =  setInterval(time_b, 1000);
     }
 } 
@@ -30,11 +33,12 @@ function time_b(){
     clearInterval(verif_bonus);
     time_bonus = 30;
     val_bonus = 1;
+    bloc_bonus = 0;
     updateDOM('rebourd',time_bonus); 
   }
 }
 
-    // Fonction mise a jour click +
+    // Fonction mise a jour click + retrait de 500 points.
 function auto_click() {
   if (score > grades[autoClick]) { 
       if( !verif_autoclick){
@@ -45,11 +49,11 @@ function auto_click() {
     }
 }
 
+  // fonction multiplicateur + mise a jour de l'affichage.
 function augmenterMultiplicateur() {
   if (score > grades[count]){
   multiplier++; 
   score = score - grades[count];
-  multiplier++;
   updateDOM('affichage', score);
   count++;
   updateDOM('multiplicateur', multiplier);
