@@ -11,14 +11,14 @@ let time_bonus =30;
 let val_bonus = 1;
 let id;
 let Element;
-let bloc_bonus = 0;
+let bloc_bonus = true;
 
   // Fonction bonus + retrait du coup de 5000
 function Bonus() {
   
-    if (score > bonus && bloc_bonus==0){
+    if (score > bonus && bloc_bonus){
       score = score - 5000;
-      bloc_bonus = 1;
+      bloc_bonus = false;
       updateDOM('affichage', score);
       val_bonus = 2;
       verif_bonus =  setInterval(time_b, 1000);
@@ -33,7 +33,7 @@ function time_b(){
     clearInterval(verif_bonus);
     time_bonus = 30;
     val_bonus = 1;
-    bloc_bonus = 0;
+    bloc_bonus = true;
     updateDOM('rebourd',time_bonus); 
   }
 }
