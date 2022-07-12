@@ -9,47 +9,40 @@ let verif_autoclick;
 let verif_bonus;
 let time_bonus =30;
 let val_bonus = 1;
+let id;
+let Element;
 
-
+  // Fonction bonus + retrait du coup de 5000
 function Bonus() {
   if (score > bonus){
     score = score - 5000;
-    updateDOM();
+    updateDOM('affichage', score);
   val_bonus = 2;
       verif_bonus =  setInterval(time_b, 1000);
     }
-  
 } 
 
+// fonction bloquage du bouton bonus de 200% après 30 secondes.
 function time_b(){
   time_bonus--;
-  updateDOMC(); 
+  updateDOM('rebourd',time_bonus); 
   if(time_bonus== 0){
     clearInterval(verif_bonus);
     time_bonus = 30;
     val_bonus = 1;
-    updateDOMC(); 
+    updateDOM('rebourd',time_bonus); 
   }
 }
 
-  // Autoclick
-
+    // Fonction mise a jour click +
 function auto_click() {
   if (score > grades[autoClick]) { 
       if( !verif_autoclick){
       verif_autoclick= setInterval(augmenterAffichage,500);
+      score = score - 500;
+      updateDOM('affichage', score)
     }
     }
-}
-
-function updateDOMC(){
-  let dom_element = document.getElementById('rebourd');
-  dom_element.innerText = time_bonus;
-}
-
-function updateDOMA() {
-  let dom_element = document.getElementById('multiplicateur');
-  dom_element.innerText = multiplier;
 }
 
 function augmenterMultiplicateur() {
@@ -57,35 +50,27 @@ function augmenterMultiplicateur() {
   multiplier++; 
   score = score - grades[count];
   multiplier++;
-  updateDOM();
+  updateDOM('affichage', score);
   count++;
-  updateDOMA();
-  updateDOMB();
+  updateDOM('multiplicateur', multiplier);
+  updateDOM('PRmulti',grades[count]);
   }
-  
+}
+    // fonction Mise a jour des variables.
+function updateDOM(id,Element) {
+  let dom_element = document.getElementById(id);
+  dom_element.innerText = Element;
 }
 
-function updateDOM() {
-  let dom_element = document.getElementById('affichage');
-  dom_element.innerText = score;
-}
-
-function updateDOMB() {
-  let dom_element = document.getElementById('PRmulti');
-  dom_element.innerText = grades[count];
-}
-
-  // Le Click
-
+  // Fonction incrementation de score
 function augmenterAffichage() {
     score = score + multiplier * val_bonus;
-    updateDOM();
+    updateDOM('affichage', score);
 }
 
+  // Surveillence des clicks
 document.getElementById('multiplier').addEventListener('click', augmenterMultiplicateur);
 document.getElementById('mon_bouton').addEventListener('click', augmenterAffichage);
-
-
 
 // gestion audio
 
