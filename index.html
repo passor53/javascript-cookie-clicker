@@ -1,40 +1,41 @@
 <!DOCTYPE html>
 <html lang="fr">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <link rel="stylesheet"  href="style.css">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Passor Clic Game</title>
-</head>
-<body>
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <link rel="stylesheet"  href="style.css">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Cookies-Clicker</title>
+    </head>
+    <body>
+                                    <!-- Barre de navigation -->
+        <nav class="navigation">
+            <span class="sb">Clicker-calottes</span>
+            <ul>
+                <li>Options</li>
+                <li>Statistiques</li>
+                <li>Recommencer</li>
+            </ul>
+        </nav>
+                                     <!-- Les boutons -->
+                <div id="affichage">0</div>
+                    <button style="cursor:pointer" id="mon_bouton">Baffes</button>
+            
+                    <button style="cursor:pointer" id="multiplier">
+                    <div><h3>Multiplicateur par :</h3></div><div id="multiplicateur">1</div></button>
+                    
+                    <div id="multiplier">
+                        <h3>Le prochain  Multiplicateur vous coutera :</h3>
+                        <div id="PRmulti">50</div>
+                    </div>
 
-    <nav class="navigation">
-        <span class="sb">Clicker-calottes</span>
-        <ul>
-            <li>Options</li>
-            <li>Statistiques</li>
-            <li>Recommencer</li>    
-        </ul>
-    </nav>
- 
-         
-            <div id="affichage">0</div>
-                <button style="cursor:pointer" id="mon_bouton">Baffes</button>
-           
-                <button style="cursor:pointer" id="multiplier">
-                  <div><h3>Multiplicateur par :</h3></div><div id="multiplicateur">1</div>
-                </button>
-                
-                <div style="cursor:pointer" id="multiplier">
-                    <div><h3>Le prochain  Multiplicateur vous coutera :</h3></div>
-                    <div id="PRmulti">50</div>
-                </div>
+                    <button id="auto_click" onclick="auto_click()" >Auto-Click à 500 Baffes</button>
 
-                <button id="auto_click" onclick="auto_click()" >Auto-Click</button>
+                    <button id="bonus" onclick="Bonus()" >Bonus coute 5000 Baffes<div id="rebourd">30</div></button>
+                    
+                    <button type="reset" onClick="refreshPage()">Reset</button>
 
-                <button id="bonus" onclick="Bonus()" >Bonus<div id="rebourd">30</div></button>
-    
-                <script src="script.js"></script>
-</body>
+                            <!-- Code JS-->
+                    <script src="script.js"></script>
+    </body>
 </html>         
