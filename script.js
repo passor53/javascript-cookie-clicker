@@ -44,12 +44,12 @@ function time_b() {
     updateDOM('rebourd',time_bonus); 
   }}
 
-    // Fonction mise a jour click + retrait de 500 points.
+    // Fonction mise a jour auto_click + retrait de 500 points.
 function auto_click() {
   if (score > grades[autoClick]) { 
       if ( !verif_autoclick) {
       verif_autoclick= setInterval(augmenterAffichage,500);
-      score = score - 500;
+      score = score - 500; 
       updateDOM ('affichage', score)
     }}}
 
@@ -88,7 +88,7 @@ function refreshPage(){
 
 // gestion audio
 const audio = new Audio("sound/gifle.mp3");
-const buttons = document.querySelectorAll("button");
+const buttons = document.querySelectorAll("#mon_bouton");
 
 buttons.forEach(button => {
   button.addEventListener("click", () => {

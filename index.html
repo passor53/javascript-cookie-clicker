@@ -8,34 +8,40 @@
         <title>Cookies-Clicker</title>
     </head>
     <body>
-                                    <!-- Barre de navigation -->
-        <nav class="navigation">
-            <span class="sb">Clicker-calottes</span>
-            <ul>
-                <li>Options</li>
-                <li>Statistiques</li>
-                <li>Recommencer</li>
-            </ul>
-        </nav>
-                                     <!-- Les boutons -->
-                <div id="affichage">0</div>
-                    <button style="cursor:pointer" id="mon_bouton">Baffes</button>
-            
-                    <button style="cursor:pointer" id="multiplier">
-                    <div><h3>Multiplicateur par :</h3></div><div id="multiplicateur">1</div></button>
-                    
-                    <div id="multiplier">
-                        <h3>Le prochain  Multiplicateur vous coutera :</h3>
-                        <div id="PRmulti">50</div>
-                    </div>
+        
+                                        <!-- Barre de navigation -->
+            <nav class="navigation">
+                <span class="sb">Clicker-Baffes</span>
+                <ul>
+                    <li><button type="reset" onClick="refreshPage()">Reset</button></li>
+                </ul>
+            </nav>
+                                        <!-- Les boutons -->
+            <div id="bloc_page">
+        
+                <section class="section-clicker">                        
+                        <div class="baffeur"> <div id="affichage">0</div>
+                        <button style="cursor:pointer" id="mon_bouton"><img  class="asterix" src="img/asterix.png" /></button></div>
+                
+                        <button style="cursor:pointer" id="multiplier"> 
+                        <div class="multiplicateur_size"><h3>Multiplicateur par :</h3></div><div id="multiplicateur">1</div></button>
+                </section>    
 
-                    <button id="auto_click" onclick="auto_click()" >Auto-Click à 500 Baffes</button>
+                <section class="section-bonus">    
+                        <div class="bouton_multi">
+                            <h3 class="h3-box">Le prochain  Multiplicateur vous coutera :</h3>
+                                  <div id="PRmulti">50</div>
+                        </div>
+                        <div class="button-box">
+                            <button id="auto_click" onclick="auto_click()" >Auto-Click à 500 Baffes</button>
+                            <button id="bonus" onclick="Bonus()" >Bonus coute 5000 Baffes<div id="rebourd">30</div></button>
+                            
+                        </div>
+                </section>
 
-                    <button id="bonus" onclick="Bonus()" >Bonus coute 5000 Baffes<div id="rebourd">30</div></button>
-                    
-                    <button type="reset" onClick="refreshPage()">Reset</button>
-
-                            <!-- Code JS-->
-                    <script src="script.js"></script>
+            </div>
+                                <!-- Code JS-->
+                        <script src="script.js"></script>
+        
     </body>
 </html>         

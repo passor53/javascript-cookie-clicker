@@ -3,5 +3,121 @@
     margin: 0;
 }
 
+body{
+    background-image: url('img/fond_ecran_pc.jpg');
+    background-repeat: no-repeat;
+    background-size: 100vw 100vh;
+}
+        /* Navigation */
+.navigation{
+    display: flex;
+    border: solid 1px gray;
+    background-color: rgb(108, 183, 245);
+    border-radius: 5px;
+    margin-top: 1vh;
+    margin-left: 1vw;
+    margin-right: 1vw;
+    margin-bottom: 1vh;
+    width: 25vw;
+    height: 6vh;
+    align-items: center;
+}
 
+ul{
+    display: flex;
+}
+
+li{
+    list-style-type: none;
+}
+
+
+#bloc_page{
+    display: flex;
+}
+                        /* Section clicker*/
+
+
+.section-clicker{
+    background-image: url(img/bouclier.png);
+    background-repeat: no-repeat;
+    background-size: 30vw;
+    background-position-y: center;
+    background-position-x: center;
+    text-align: center;   
+    width: 50vw;
+    display: grid;
+    padding-top: 20vh;
+}
+
+.baffeur{
+    margin: -10vh 0vw 0vh 0vw;
+}
+
+#mon_bouton{
+    border-radius: 10vw;
+}
+
+#multiplier{
+    border: solid 1px gray;
+    border-radius: 5vw;
+    margin: 0 8vw 0 8vw;
+}
+
+                         /* section bonus*/
+.section-bonus{
+    background-image: url(img/casque_romain.png);
+    background-size: 35vw;
+    background-repeat: no-repeat;
+    background-position-x: center;
+    background-position-y: center;
+    justify-items: center;
+    align-content: center;
+    text-align: center;   
+    width: 50vw;
+    display: grid;
+}
+
+.h3-box{
+    color: whitesmoke;
+    padding: 0 1vw 0 1vw;
+    background-color: gray;
+    opacity: 75%;
+}
+
+.bouton_multi{
+    padding-bottom: 15vh;
+    padding-top: 0vh;
+}
+
+#PRmulti{
+    border: solid 1px black;
+    background-color: whitesmoke;
+    margin: 0 11vw 0 11vw;
+}
+
+.button-box{
+    display: flex;
+    flex-direction: column;
+}
+
+
+        /*Affichages*/
+
+
+#affichage{
+    background-color: whitesmoke;
+    border: solid 1px black;
+    margin: 0 19vw 0 19vw;
+}
+
+.asterix{
+    width: 10vw;
+    height: auto;
+}
+
+
+#multiplier{
+    margin-top: 5vh;
+}
 
